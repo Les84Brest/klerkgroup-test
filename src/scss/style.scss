@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@import "./vars";
+@import "./mixins";
+@import "./fonts";
+@import "./forms";
+
+@import "./blocks/all";
+
+@import "node_modules/reset-css/sass/reset";
+
+// GENERAL CSS SETTINGS
+
+::placeholder {
+    color: #666;
+}
+
+::selection {
+    background-color: $accent;
+    color: #fff;
+}
+
+body {
+    font-family: $mainFont;
+    font-size: $fontSize;
+    line-height: $lineheight;
+    color: $textColor;
+    min-width: $minWidth + px;
+    position: relative;
+    overflow-x: hidden;
+}

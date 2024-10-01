@@ -1,0 +1,1 @@
+Test task for the vacancy of layout designer
