@@ -106,3 +106,38 @@
         }
     }
 }
+
+@mixin hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+
+@mixin mediaTouch {
+    @media (any-pointer: coarse) {
+        @content;
+    }
+}
+
+
+@mixin text-anim-underline($width: 1px, $color: #fff) {
+
+    transition: background-size 0.3s ease-in;
+
+    background-image: linear-gradient(transparent calc(100% - $width), $color $width);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+
+    @include hover() {
+        background-size: 100% 100%;
+    }
+}

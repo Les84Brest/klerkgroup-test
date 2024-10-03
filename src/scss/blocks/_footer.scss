@@ -1,0 +1,86 @@
+.footer {
+    display: flex;
+    align-items: center;
+
+    height: var(--footer-heigth);
+    flex: 0 0 auto;
+
+    background: $gray-500;
+
+    color: $whiteColor;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        color: $whiteColor;
+        font-size: 13px;
+    }
+
+    &-item {
+        position: relative;
+        padding-right: 40px;
+
+        &:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+            top: 50%;
+            right: 0;
+
+            transform: translateY(-50%);
+
+            width: 1px;
+            height: 18px;
+
+            background-color: $gray-100;
+        }
+    }
+
+    .payment-systems,
+    .contacts-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 38px;
+    }
+}
+
+.footer-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    &__icon {
+        display: inline-block;
+
+        color: $accent;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+
+        color: $whiteColor;
+
+        text-decoration: none;
+        transition: color 0.3s ease-in;
+
+        @include hover {
+            color: rgba($accent, 0.6);
+
+            .footer-list-item__icon {
+                color: rgba($accent, 0.6);
+            }
+        }
+
+        .footer-list-item__icon {
+            transition: color 0.3s ease-in;
+        }
+    }
+}

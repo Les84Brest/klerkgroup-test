@@ -1,0 +1,37 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 183px;
+    min-height: 43px;
+    border: 1px solid $whiteColor;
+    border-radius: 4px;
+
+    font-size: 13px;
+    line-height: 15.6px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background: $accent;
+    color: $whiteColor;
+
+    transition: all 0.3s ease-in;
+
+    @include hover {
+        color: darken($whiteColor, 15%);
+        background-color: darken($accent, 15%);
+    }
+
+    &--white {
+        color: $gray-700;
+        background: $whiteColor;
+        border-color: $gray-700;
+
+        @include hover {
+            color: $accent;
+            background-color: darken($whiteColor, 15%);
+        }
+    }
+}

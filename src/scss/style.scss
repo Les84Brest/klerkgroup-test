@@ -4,12 +4,23 @@
 @import "./mixins";
 @import "./fonts";
 @import "./forms";
+@import "./ui";
 
 @import "./blocks/all";
 
 @import "node_modules/reset-css/sass/reset";
 
 // GENERAL CSS SETTINGS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    // border: 1px solid tomato !important;
+// opacity: 1 !important;
+// visibility: visible !important;
+}
+
 
 ::placeholder {
     color: #666;
@@ -20,12 +31,47 @@
     color: #fff;
 }
 
+:root {
+    --header-heigth: 100px;
+    --footer-heigth: 80px;
+}
+
 body {
+    min-width: $minWidth + px;
+
+    position: relative;
+
     font-family: $mainFont;
     font-size: $fontSize;
     line-height: $lineheight;
     color: $textColor;
-    min-width: $minWidth + px;
-    position: relative;
-    overflow-x: hidden;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+    max-width: $maxWidthContainer + px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+
+
+
+main.main {
+    flex: 1 0 auto;
+}
+
+.section{
+    padding: 121px 0 151px 0;
+}
+
+.accent-text{
+    color: $accent;
 }

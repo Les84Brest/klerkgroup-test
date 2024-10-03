@@ -1,0 +1,63 @@
+.section-hero {
+    padding: calc(103px + var(--header-heigth)) 0 202px 0;
+
+    background-size: cover;
+    background-position: top center;
+
+    &__title {
+        max-width: 780px;
+
+        font-size: 48px;
+        line-height: 57.6px;
+        color: $blackColor;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        margin-bottom: 90px;
+    }
+
+    &__content {
+        color: $blackColor;
+        font-size: 20px;
+        line-height: 24px;
+
+        max-width: 780px;
+
+        margin-bottom: 80px;
+
+        p {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+.list-advantages {
+    list-style-type: none;
+ 
+    &__item {
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 25px;
+
+        &::before {
+            content: url(../../img/list-marker.svg);
+            position: absolute;
+            left: 0;
+
+            width: 20px;
+            height: 24px;
+        }
+
+        // &::marker {
+        //     font-size: 20px;
+        //     line-height: 24px;
+        // }
+    }
+}
