@@ -46,7 +46,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "nice-select2": "^2.2.0",
+    "choices.js": "^11.0.2",
     "reset-css": "^5.0.2"
   }
 }

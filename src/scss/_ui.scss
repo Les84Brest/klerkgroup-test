@@ -19,6 +19,8 @@
 
     transition: all 0.3s ease-in;
 
+    cursor: pointer;
+
     @include hover {
         color: darken($whiteColor, 15%);
         background-color: darken($accent, 15%);

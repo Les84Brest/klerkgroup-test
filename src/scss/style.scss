@@ -1,7 +1,8 @@
-@use "sass:math";
+// @use "sass:math";
 
 @import "./vars";
 @import "./mixins";
+@import "./placeholders";
 @import "./fonts";
 @import "./forms";
 @import "./ui";
@@ -9,6 +10,7 @@
 @import "./blocks/all";
 
 @import "node_modules/reset-css/sass/reset";
+@import "./libs/choices.min.scss";
 
 // GENERAL CSS SETTINGS
 * {
@@ -37,6 +39,8 @@
 }
 
 body {
+    @extend %custom-scroll-y;
+    
     min-width: $minWidth + px;
 
     position: relative;
