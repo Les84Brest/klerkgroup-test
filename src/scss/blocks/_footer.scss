@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
 
-    height: var(--footer-heigth);
+    min-height: var(--footer-heigth);
     flex: 0 0 auto;
 
     background: $gray-500;
@@ -21,7 +21,7 @@
 
     &-item {
         position: relative;
-        padding-right: 40px;
+        padding-right: 38px;
 
         &:not(:last-child)::after {
             content: "";
@@ -46,6 +46,10 @@
         justify-content: flex-start;
         gap: 38px;
     }
+
+    &__copy {
+        @extend %no-wrap;
+    }
 }
 
 .footer-list-item {
@@ -58,6 +62,13 @@
         display: inline-block;
 
         color: $accent;
+
+        width: 20px;
+        height: 20px;
+    }
+
+    &__title {
+        @extend %no-wrap;
     }
 
     &__link {
