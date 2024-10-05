@@ -1,5 +1,6 @@
 import InputFile from "./modules/InputFile.js";
-import  InputRange from "./modules/InputRange.js";
+import InputRange from "./modules/InputRange.js";
+import TopMenu from "./modules/TopMenu.js";
 import * as siteFunctions from "./modules/functions.js";
 import Choices from "choices.js";
 
@@ -9,9 +10,10 @@ const SECTION_HEADER_SELECTOR = ".js-last-accent";
 const SELECT_SELECTOR = ".js-select-input";
 const FILE_INPUT_WRAP_SELECTOR = ".js-file-input";
 const RANGE_INPUT_SELECTOR = ".js-range-input";
+const TOP_MENU_SELECTOR = '.js-header-menu';
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    initTopMenu();
     initHeaders();
     initSelect();
     initFileInputs();
@@ -66,5 +68,13 @@ function initRangeInputs() {
         inputs.forEach(input => {
             new InputRange(input);
         })
+    }
+}
+
+function initTopMenu() {
+    const menuWrap = document.querySelector(TOP_MENU_SELECTOR);
+
+    if (menuWrap) {
+        new TopMenu(menuWrap);
     }
 }

@@ -54,6 +54,11 @@ body {
 
     display: flex;
     flex-direction: column;
+
+    &.scroll-lock {
+        overflow: hidden;
+        position: fixed;
+    }
 }
 
 html {
@@ -79,3 +84,4 @@ main.main {
 .accent-text{
     color: $accent;
 }
+

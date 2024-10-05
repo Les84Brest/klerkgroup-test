@@ -1,41 +1,95 @@
 .header {
     position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: stretch;
+    top: 0;
+    left: 0;
 
-    height: var(--header-heigth);
-
+    width: 100%;
+    z-index: 10;
     background-color: rgba($gray-800, 0.9);
-    z-index: 5;
+    min-height: var(--header-heigth);
 
     &__container {
-        width: 100%;
-    }
-
-    &__body {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        flex: 1 0 100%;
+        align-items: center;
+
+        padding: 0 15px;
+
+        min-height: var(--header-heigth);
     }
 
-    &__menu {
-        margin-left: auto;
+    &__logo {
+        @include mediaMax($lg) {
+            z-index: 5;
+            max-width: 200px;
+        }
+        
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
     }
 }
 
-.menu-header {
+.menu {
     &__list {
         display: flex;
-        flex-direction: row;
         gap: 60px;
+
+        @include mediaMax($lg) {
+            flex-direction: column;
+
+            li {
+                width: 100%;
+            }
+        }
+    }
+
+    &__body {
+        @include mediaMax($lg) {
+            &::before {
+                content: "";
+
+                display: none;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: var(--header-heigth);
+                background-color: $blackColor;
+            }
+
+            &.active::before {
+                display: block;
+            }
+
+            position: fixed;
+            left: 0;
+            top: -100%;
+
+            width: 100%;
+            min-height: 100%;
+
+            padding: calc(var(--header-heigth) + 20px) 20px 20px 20px;
+
+            background-color: rgba($gray-800, 0.9);
+
+            transition: top 0.3s ease-in;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+
+
+            &.active {
+                top: 0;
+            }
+        }
     }
 
     &__link {
-        @include text-anim-underline(2px);
-
         color: $whiteColor;
         text-transform: uppercase;
         font-size: 13px;
@@ -43,10 +97,170 @@
         text-decoration: none;
         font-weight: 600;
 
+        transition: color 0.3s ease-in;
+
         &.active {
             color: $accent;
+
+            @include hover {
+                color: darken($color: $accent, $amount: 15);
+            }
         }
 
-        
+        @include hover {
+            color: darken($color: $whiteColor, $amount: 30);
+        }
+
+        @include mediaMax($lg) {
+            display: inline-block;
+
+            width: 100%;
+
+            font-size: 26px;
+        }
+    }
+
+    &__icon {
+        display: none;
+
+        @include mediaMax($lg) {
+            display: block;
+
+            z-index: 5;
+
+            position: relative;
+
+            width: 30px;
+            height: 18px;
+
+            cursor: pointer;
+
+            &::before,
+            &::after,
+            span {
+                position: absolute;
+                left: 0;
+
+                height: 10%;
+                width: 100%;
+
+                background: $whiteColor;
+
+                transition: all 0.3s ease-in;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            span {
+                top: 50%;
+                transform: translateY(-50%) scale(1);
+
+                transition: transform 0.3s;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+
+            &.active{
+                &::before {
+                    transform: rotate(-45deg) translateY(-50%);
+                    top: 50%;
+                }
+
+                &::after {
+                    transform: rotate(45deg) translateY(50%);
+                    bottom: 50%;
+                }
+
+                span {
+                    transform: scale(0);
+                }
+            }
+        }
     }
 }
+
+// .header {
+//     position: fixed;
+
+//     top: 0;
+//     left: 0;
+
+//     width: 100%;
+//     height: var(--header-heigth);
+
+//     display: flex;
+//     align-items: center;
+//     justify-content: stretch;
+
+//     background-color: rgba($gray-800, 0.9);
+//     z-index: 5;
+
+//     &__container {
+//         max-width:  $maxWidthContainer + px;
+//         margin: 0 auto;
+//     }
+
+//     &__body {
+//         display: flex;
+//         width: 100%;
+//         align-items: center;
+//         justify-content: space-between;
+//         flex: 1 0 100%;
+//     }
+
+//     &__menu {
+//         margin-left: auto;
+//     }
+// }
+
+// .menu-header {
+//     &__list {
+//         display: flex;
+//         flex-direction: row;
+//         gap: 60px;
+//     }
+
+//     &__nav {
+//         padding-left: 40px;
+//     }
+
+//     &__link {
+//         @include text-anim-underline(2px);
+
+//         color: $whiteColor;
+//         text-transform: uppercase;
+//         font-size: 13px;
+//         line-height: 15.6px;
+//         text-decoration: none;
+//         font-weight: 600;
+
+//         &.active {
+//             color: $accent;
+//         }
+//     }
+
+//     @include mediaMax($lg) {
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         bottom: 0;
+//         right: 0;
+
+//         width: 100%;
+//         height: 100%;
+//         z-index: 4;
+
+//         background-color: rgba($gray-800, 0.9);
+
+//         border: 1px solid red;
+//     }
+// }
