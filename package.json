@@ -8,13 +8,15 @@
     "dev": "gulp",
     "build": "gulp build --build",
     "sprite": "gulp sprite",
-    "deployftp": "gulp deployFTP --build"
+    "deployftp": "gulp deployFTP --build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "gulp"
   ],
   "author": "Alex Semeniuk",
   "license": "ISC",
+  "homepage": "https://github.com/Les84Brest/klerkgroup-test",
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
@@ -47,6 +49,7 @@
   },
   "dependencies": {
     "choices.js": "^11.0.2",
+    "gh-pages": "^6.1.1",
     "reset-css": "^5.0.2"
   }
 }
