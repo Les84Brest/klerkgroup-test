@@ -12,13 +12,17 @@
 
     &__row {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
         gap: 30px;
 
         margin-bottom: 30px;
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @include mediaMax($xs) {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -109,6 +113,10 @@
                         background: darken($accent, 10);
                     }
                 }
+            }
+
+            @include mediaMax($xl) {
+                grid-column: span 1;
             }
         }
 
