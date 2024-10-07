@@ -1,11 +1,7 @@
 .section-order {
     background: url(../../img/order-bg.webp);
     background-color: $placeholder;
-    // * {
-    //     border: 1px solid tomato !important;
-    //     opacity: 1 !important;
-    //     visibility: visible !important;
-    // }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -29,6 +25,8 @@
         color: $whiteColor;
         font-weight: 800;
         text-transform: uppercase;
+        text-align: center;
+
         margin-bottom: 30px;
 
         @include mediaMax($lg) {
@@ -79,6 +77,10 @@
             max-width: none;
             min-height: 209px;
             min-width: 303px;
+        }
+
+        @include mediaMax($lg) {
+            min-width: 290px;
         }
 
         &:not(:first-child) {
@@ -134,6 +136,10 @@
         transition-property: box-shadow, color;
         transition-duration: 0.3s;
         transition-timing-function: ease-in;
+
+        @include mediaMax($lg){
+            flex: 1 0 100px;
+        }
     }
 
     &__text {
