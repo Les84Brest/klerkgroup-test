@@ -1,8 +1,17 @@
-<section class="section-hero" style="background-image: url(../img/hero-bg.webp);">
+<!-- <section class="section-hero" style="background-image: url(../img/hero-bg.webp);"> -->
+<section class="section-hero">
+
+    <picture class="section-hero__bg">
+        <source media="(max-width: 576px)" srcset="../img/hero-bg-sm.webp">
+        <source media="(max-width: 992px)" srcset="../img/hero-bg-lg.webp">
+        <source srcset="../img/hero-bg.webp">
+        <img src="../img/hero-bg.webp" alt="A description of the image">
+    </picture>
     <div class="container">
         <div class="section-hero__body">
             <h1 class="section-hero__title">
-                <span class="accent-text">Lorem ipsum</span> dolor sit ametconsectetur <span class="accent-text">adipiscing</span>
+                <span class="accent-text">Lorem ipsum</span> dolor sit ametconsectetur <span
+                    class="accent-text">adipiscing</span>
             </h1>
             <div class="section-hero__content">
                 <p> At vero eos et accusamus et iusto odio dignissimos ducimus!</p>

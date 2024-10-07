@@ -1,4 +1,4 @@
-// @use "sass:math";
+@use "sass:math";
 
 @import "./vars";
 @import "./mixins";
@@ -79,6 +79,10 @@ main.main {
 
 .section{
     padding: 121px 0 151px 0;
+
+    @include mediaMax($sm){
+        padding: 60px 0 60px 0;
+    }
 }
 
 .accent-text{
