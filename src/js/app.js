@@ -1,5 +1,6 @@
 import InputFile from "./modules/InputFile.js";
 import InputRange from "./modules/InputRange.js";
+import OrderSlider from "./modules/OrderSlider.js";
 import TopMenu from "./modules/TopMenu.js";
 import * as siteFunctions from "./modules/functions.js";
 import Choices from "choices.js";
@@ -7,6 +8,7 @@ import Choices from "choices.js";
 siteFunctions.isWebp();
 
 const SECTION_HEADER_SELECTOR = ".js-last-accent";
+const ORDER_STEPS_SELECTOR = ".js-order-steps";
 const SELECT_SELECTOR = ".js-select-input";
 const FILE_INPUT_WRAP_SELECTOR = ".js-file-input";
 const RANGE_INPUT_SELECTOR = ".js-range-input";
@@ -14,6 +16,7 @@ const TOP_MENU_SELECTOR = '.js-header-menu';
 
 document.addEventListener('DOMContentLoaded', function () {
     initTopMenu();
+    initOrderList();
     initHeaders();
     initSelect();
     initFileInputs();
@@ -34,6 +37,15 @@ function initHeaders() {
             let newText = words.join(' ') + ' <span class="accent-text">' + lastWord + '</span>';
             header.innerHTML = newText;
         });
+    }
+
+}
+
+function initOrderList() {
+    const orderSteps = document.querySelector(ORDER_STEPS_SELECTOR);
+
+    if (orderSteps) {
+        new OrderSlider(orderSteps);
     }
 
 }

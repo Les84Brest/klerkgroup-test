@@ -46,6 +46,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "choices.js": "^11.0.2",
     "reset-css": "^5.0.2"
   }
